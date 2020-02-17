@@ -6,13 +6,15 @@ import os
 print('Building Started')
 
 cwd = os.getcwd()
-input_ui_file = 'untitled.ui'
+input_ui_file = 'my_gui.ui'
+output_filename = 'MainWindow.py'
+
 
 username = os.getlogin() +'\\'
 sys_dir = os.path.join('C:\\Users', username)
 os.system('cd ' + sys_dir)
 
-console_cmd = os.path.join('pyuic5 -x ' + cwd, input_ui_file + ' -o ' + cwd, 'output.py')
+console_cmd = os.path.join('pyuic5 -x ' + cwd, input_ui_file + ' -o ' + cwd, output_filename)
 os.system(console_cmd)
 
 print('Building Completed')
