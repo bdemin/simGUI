@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="Vehicles">
+    <file>m113.jpg</file>
+    <file>eitan.jpg</file>
+    <file>mk4.jpg</file>
+  </qresource>
+</RCC>
