@@ -7,6 +7,11 @@ class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
 
+        self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
+        self.comboBoxVehicleType.currentTextChanged.connect(self.on_vehicle_type_change)
+    def on_vehicle_type_change(self, val):
+        image = ":/Vehicles/" + val + ".jpg"
+        self.labelVehicleImg.setPixmap(QtGui.QPixmap(image))
 
 if __name__ == "__main__":
     import sys
