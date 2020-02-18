@@ -11,6 +11,9 @@ class MyQtApp(Ui_MainWindow):
 
         self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
         self.comboBoxVehicleType.currentTextChanged.connect(self.on_vehicle_type_change)
+
+        self.comboBoxTerrainProfileType.textHighlighted.connect(self.on_terrain_profile_change)
+        
         self.comboBoxTerrainTypeOptions.currentTextChanged.connect(self.on_terrain_type_change)
 
     def on_vehicle_type_change(self, val):
@@ -21,6 +24,15 @@ class MyQtApp(Ui_MainWindow):
     def on_terrain_type_change(self, val):
         values = self.terrain_types[val] # list
         self.labelTerrainParams.setText(f"\u03BC = {values[0]} |  Ci = {values[1]} | Ri = {values[2]}")
+
+    def on_terrain_profile_change(self, val):
+        if val == 'Flat':
+            pass
+        elif val == 'Step':
+            pass
+        elif val == 'Slope':
+            pass
+        print(val)
 
     def set_terrain_types(self):
         self.terrain_types = {'LETE Sand': [1,2,3],
