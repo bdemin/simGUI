@@ -5,25 +5,23 @@ import os
 
 print('Building Started')
 
-cwd = os.getcwd()
-input_filename = 'resource_file.qrc'
-input_dir = cwd + '\\resources\\'
-output_filename = 'resources.py'
-output_dir = cwd + '\\resources\\'
+cwd = os.path.join(os.getcwd(), 'gui', 'resources')
+input_filename = '\\resource_file.qrc'
+input_dir = cwd + input_filename
+output_filename = '\\resources.py'
+output_dir = cwd + output_filename
 
 username = os.getlogin()
-pyside_dir = os.path.join('C:\\Users', username, 'Anaconda3\\Lib\\site-packages\\PySide2')
-os.system('cd ' + pyside_dir)
+pyside_dir = os.path.join('C:\\Users', username, 'Anaconda3\\Scripts')
 
 command = []
-command.append('pyside2-rcc.exe ')
-command.append(input_dir)
-command.append(input_filename + ' ')
+command.append(os.path.join(pyside_dir, 'pyside2-rcc.exe '))
+command.append(input_dir + ' ')
 command.append('-o ')
 command.append(output_dir)
-command.append(output_filename)
 
 os.system(''.join(command))
+
 
 print('Building Completed')
 print('Output file can be found in:', cwd)
