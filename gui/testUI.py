@@ -16,6 +16,15 @@ class MyQtApp(Ui_MainWindow):
         
         self.comboBoxTerrainTypeOptions.currentTextChanged.connect(self.on_terrain_type_change)
 
+        self.doubleSpinBoxHeight.valueChanged.connect(self.on_spinboxHeight_val_change)
+        self.sliderHeight.valueChanged.connect(self.on_sliderHeight_move)
+
+    def on_sliderHeight_move(self, val):
+        self.doubleSpinBoxHeight.setValue(val / 10)
+
+    def on_spinboxHeight_val_change(self, val):
+        self.sliderHeight.setValue(val * 10)
+
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
         self.labelVehicleImg.setPixmap(QtGui.QPixmap(image))
