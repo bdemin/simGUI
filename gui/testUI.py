@@ -19,11 +19,20 @@ class MyQtApp(Ui_MainWindow):
         self.doubleSpinBoxHeight.valueChanged.connect(self.on_spinboxHeight_val_change)
         self.sliderHeight.valueChanged.connect(self.on_sliderHeight_move)
 
+        self.doubleSpinBoxDistance.valueChanged.connect(self.on_spinboxDistance_val_change)
+        self.sliderDistance.valueChanged.connect(self.on_sliderDistance_move)
+
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
     def on_spinboxHeight_val_change(self, val):
         self.sliderHeight.setValue(val * 10)
+
+    def on_sliderDistance_move(self, val):
+        self.doubleSpinBoxDistance.setValue(val)
+
+    def on_spinboxDistance_val_change(self, val):
+        self.sliderDistance.setValue(val)
 
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
