@@ -6,7 +6,6 @@ from main_window import Ui_MainWindow
 class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
-
         self.set_terrain_types()
 
         self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
@@ -22,6 +21,10 @@ class MyQtApp(Ui_MainWindow):
         self.doubleSpinBoxDistance.valueChanged.connect(self.on_spinboxDistance_val_change)
         self.sliderDistance.valueChanged.connect(self.on_sliderDistance_move)
 
+        self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
+        self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
+
+
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
@@ -34,6 +37,13 @@ class MyQtApp(Ui_MainWindow):
     def on_spinboxDistance_val_change(self, val):
         self.sliderDistance.setValue(val)
 
+    def on_sliderSlope_move(self, val):
+        self.spinBoxSlope.setValue(val)
+
+    def on_spinboxAngle_val_change(self, val):
+        self.sliderSlope.setValue(val)
+
+
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
         self.labelVehicleImg.setPixmap(QtGui.QPixmap(image))
@@ -42,7 +52,6 @@ class MyQtApp(Ui_MainWindow):
             self.checkBoxDifferential.setEnabled(True)
         else:
             self.checkBoxDifferential.setEnabled(False)
-
 
 
     def on_terrain_type_change(self, val):
