@@ -20,6 +20,12 @@ class MyQtApp(Ui_MainWindow):
         image = ":/Vehicles/" + val + ".jpg"
         self.labelVehicleImg.setPixmap(QtGui.QPixmap(image))
 
+        if val == 'Eitan':
+            self.checkBoxDifferential.setEnabled(True)
+        else:
+            self.checkBoxDifferential.setEnabled(False)
+
+
 
     def on_terrain_type_change(self, val):
         values = self.terrain_types[val] # list
