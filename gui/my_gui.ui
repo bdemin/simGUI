@@ -414,7 +414,20 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxHeight"/>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxHeight">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-1.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.100000000000000</double>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QSlider" name="sliderHeight">
@@ -426,6 +439,9 @@
                       </property>
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="invertedAppearance">
+                       <bool>false</bool>
                       </property>
                      </widget>
                     </item>
@@ -440,7 +456,7 @@
                      <widget class="QDoubleSpinBox" name="doubleSpinBoxDistance"/>
                     </item>
                     <item>
-                     <widget class="QSlider" name="slideDistance">
+                     <widget class="QSlider" name="sliderDistance">
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
                       </property>
@@ -454,7 +470,17 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSpinBox" name="spinBoxSlopeAngle"/>
+                     <widget class="QSpinBox" name="spinBoxSlope">
+                      <property name="minimum">
+                       <number>-45</number>
+                      </property>
+                      <property name="maximum">
+                       <number>45</number>
+                      </property>
+                      <property name="singleStep">
+                       <number>5</number>
+                      </property>
+                     </widget>
                     </item>
                     <item>
                      <widget class="QSlider" name="sliderSlope">
