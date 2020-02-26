@@ -3,6 +3,8 @@ from PyQt5 import QtGui, QtWidgets
 
 from main_window import Ui_MainWindow
 
+import simulation_trigger
+
 class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
@@ -24,6 +26,20 @@ class MyQtApp(Ui_MainWindow):
         self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
         self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
 
+        self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
+
+
+    def on_sim_trigger(self):
+        self.tabWidget.setDisabled(True)
+
+        # simulation_trigger.run()
+        simulation_trigger.run_m113()
+        # simulation_trigger.progress(self.progressBar, self.tabWidget)
+        # simulation_trigger.run_async(self.tabWidget)
+
+        
+
+        # simulation_trigger.run_m113()
 
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
