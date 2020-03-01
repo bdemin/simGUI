@@ -45,5 +45,15 @@ def run_async(tabWidget):
     print(ret)
     tabWidget.setDisabled(False)
 
+def run_exec():
+    import subprocess
+    cmd = '\\gui\\test.exe'
+    subprocess.call(cmd)
+
+    # subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+    # (output, err) = subp.communicate()
+    # subp_status = subp.wait()
+
+
 if __name__ == "__main__":
     run()
