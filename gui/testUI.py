@@ -33,9 +33,10 @@ class MyQtApp(Ui_MainWindow):
         self.tabWidget.setDisabled(True)
 
         # simulation_trigger.run()
-        simulation_trigger.run_m113()
+        # simulation_trigger.run_m113()
         # simulation_trigger.progress(self.progressBar, self.tabWidget)
         # simulation_trigger.run_async(self.tabWidget)
+        simulation_trigger.run_exec()
 
         
 
