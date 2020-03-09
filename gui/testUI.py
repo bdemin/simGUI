@@ -3,6 +3,9 @@ from PyQt5 import QtGui, QtWidgets
 
 from main_window import Ui_MainWindow
 
+from output_handler import get_output
+
+
 class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
@@ -29,6 +32,8 @@ class MyQtApp(Ui_MainWindow):
         
     def on_sim_trigger(self):
         self.tabWidget.setDisabled(True)
+
+        get_output(self)
 
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
