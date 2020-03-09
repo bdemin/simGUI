@@ -28,6 +28,9 @@ class MyQtApp(Ui_MainWindow):
         self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
         self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
 
+        self.spinBoxSimTime.valueChanged.connect(self.on_spinboxSimTime_val_change)
+        self.sliderSimTime.valueChanged.connect(self.on_sliderSimTime_move)
+
         self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
         
     def on_sim_trigger(self):
@@ -52,7 +55,12 @@ class MyQtApp(Ui_MainWindow):
 
     def on_spinboxAngle_val_change(self, val):
         self.sliderSlope.setValue(val)
+    
+    def on_sliderSimTime_move(self, val):
+        self.spinBoxSimTime.setValue(val)
 
+    def on_spinboxSimTime_val_change(self, val):
+        self.sliderSimTime.setValue(val)
 
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
