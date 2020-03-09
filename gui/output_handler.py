@@ -1,3 +1,6 @@
+import json
+
+
 def get_output(qt_app):
     out_dict = {}
 
@@ -15,6 +18,8 @@ def get_output(qt_app):
 
     out_dict['terrainMu'] = qt_app.terrain_types[index]
 
+    output = json.dumps(out_dict)
+    print(output)
 
 
 def get_vehicle_type(vehicle):
