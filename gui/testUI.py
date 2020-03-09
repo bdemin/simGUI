@@ -25,6 +25,10 @@ class MyQtApp(Ui_MainWindow):
         self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
         self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
 
+        self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
+        
+    def on_sim_trigger(self):
+        self.tabWidget.setDisabled(True)
 
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
