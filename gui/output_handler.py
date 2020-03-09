@@ -18,6 +18,9 @@ def get_output(qt_app):
 
     out_dict['terrainMu'] = qt_app.terrain_types[index]
 
+    # TO BE ADDED:
+    # out_dict['simulationTime'] = qt_app.comboBoxTerrainTypeOptions.currentText() 
+
     output = json.dumps(out_dict)
     print(output)
 
