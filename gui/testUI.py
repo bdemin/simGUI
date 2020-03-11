@@ -31,22 +31,20 @@ class MyQtApp(Ui_MainWindow):
 
         self.spinBoxSimTime.valueChanged.connect(self.on_spinboxSimTime_val_change)
         self.sliderSimTime.valueChanged.connect(self.on_sliderSimTime_move)
-
+    
         self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
 
     def on_sim_trigger(self):
         self.tabWidget.setDisabled(True)
-
+    
         get_output(self)
-
+      
         # simulation_trigger.run()
         # simulation_trigger.run_m113()
         # simulation_trigger.progress(self.progressBar, self.tabWidget)
         # simulation_trigger.run_async(self.tabWidget)
         simulation_trigger.run_exec()
         
-        # simulation_trigger.run_m113()
-
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
