@@ -2,28 +2,27 @@ import json
 
 
 def get_output(qt_app):
-    out_dict = {}
+    sim_params_dict = {}
 
-    out_dict['vehicleName'] = qt_app.comboBoxVehicleType.currentText()
-    out_dict['vehicleType'] = get_vehicle_type(out_dict['vehicleName'])
+    sim_params_dict['vehicleName'] = qt_app.comboBoxVehicleType.currentText()
+    sim_params_dict['vehicleType'] = get_vehicle_type(sim_params_dict['vehicleName'])
 
-    out_dict['differential'] = qt_app.checkBoxDifferential.isChecked()
+    sim_params_dict['differential'] = qt_app.checkBoxDifferential.isChecked()
     
     index = qt_app.comboBoxTerrainTypeOptions.currentText()
-    out_dict['terrainProfileType'] = qt_app.terrain_types[index]
+    sim_params_dict['terrainProfileType'] = qt_app.terrain_types[index]
     
-    out_dict['terrainSlopeAngle'] = qt_app.spinBoxSlope.value()
+    sim_params_dict['terrainSlopeAngle'] = qt_app.spinBoxSlope.value()
 
-    out_dict['terrainGroundType'] = qt_app.comboBoxTerrainTypeOptions.currentText()
+    sim_params_dict['terrainGroundType'] = qt_app.comboBoxTerrainTypeOptions.currentText()
 
-    out_dict['terrainMu'] = qt_app.terrain_types[index]
+    sim_params_dict['terrainMu'] = qt_app.terrain_types[index]
 
     # TO BE ADDED:
-    out_dict['simulationTime'] = qt_app.spinBoxSimTime.value()
+    sim_params_dict['simulationTime'] = qt_app.spinBoxSimTime.value()
 
-    output = json.dumps(out_dict)
-    print(output)
-
+    json_string = json.dumps(sim_params_dict)
+    prepare_sim_output(json_string)
 
 def get_vehicle_type(vehicle):
     if vehicle in ['M113', 'MK4', 'Namer']:
