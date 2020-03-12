@@ -29,3 +29,8 @@ def get_vehicle_type(vehicle):
     if vehicle in ['M113', 'MK4', 'Namer']:
         return 'Wheeled'
     return 'Tracked'
+
+def prepare_sim_output(json_string):
+    output_file = 'simulation_input\\' + 'model_input_params.json'
+    with open(output_file, 'w') as f:
+        json.dump(output, f)
