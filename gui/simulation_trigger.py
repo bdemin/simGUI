@@ -45,9 +45,10 @@ def run_async(tabWidget):
     print(ret)
     tabWidget.setDisabled(False)
 
-def run_exec():
+def run_exec(vehicle):
     import subprocess
-    cmd = '\\gui\\test.exe'
+    
+    cmd = 'matlab_executables\\test1\\sim_test.exe'
     subprocess.call(cmd)
 
     # subp = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
