@@ -38,12 +38,15 @@ class MyQtApp(Ui_MainWindow):
         self.tabWidget.setDisabled(True)
     
         get_output(self)
-      
+
+        vehicle = self.comboBoxVehicleType.currentText()
+        simulation_trigger.run_exec(vehicle)
+
         # simulation_trigger.run()
         # simulation_trigger.run_m113()
         # simulation_trigger.progress(self.progressBar, self.tabWidget)
         # simulation_trigger.run_async(self.tabWidget)
-        simulation_trigger.run_exec()
+        
         
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
