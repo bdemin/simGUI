@@ -3,6 +3,10 @@ from PyQt5 import QtGui, QtWidgets
 
 from main_window import Ui_MainWindow
 
+import simulation_trigger
+from output_handler import get_output
+
+
 class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
@@ -25,7 +29,25 @@ class MyQtApp(Ui_MainWindow):
         self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
         self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
 
+        self.spinBoxSimTime.valueChanged.connect(self.on_spinboxSimTime_val_change)
+        self.sliderSimTime.valueChanged.connect(self.on_sliderSimTime_move)
+    
+        self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
 
+    def on_sim_trigger(self):
+        self.tabWidget.setDisabled(True)
+    
+        get_output(self)
+
+        vehicle = self.comboBoxVehicleType.currentText()
+        simulation_trigger.run_exec(vehicle)
+
+        # simulation_trigger.run()
+        # simulation_trigger.run_m113()
+        # simulation_trigger.progress(self.progressBar, self.tabWidget)
+        # simulation_trigger.run_async(self.tabWidget)
+        
+        
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
@@ -44,6 +66,11 @@ class MyQtApp(Ui_MainWindow):
     def on_spinboxAngle_val_change(self, val):
         self.sliderSlope.setValue(val)
 
+    def on_sliderSimTime_move(self, val):
+        self.spinBoxSimTime.setValue(val)
+
+    def on_spinboxSimTime_val_change(self, val):
+        self.sliderSimTime.setValue(val)
 
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
