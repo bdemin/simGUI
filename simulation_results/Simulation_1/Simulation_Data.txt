@@ -1,0 +1,18 @@
+
+Date:   Y2020_M3_D17_H11_M11
+
+%%%%%%%%%%%%%%%% Vehicle properties %%%%%%%%%%%%%%%%%%%
+Vehicle Type:    Track
+Vehicle Name:    M113
+
+%%%%%%%%%%%%%%%% Terrain properties %%%%%%%%%%%%%%%%%%%
+Soil Type
+Soil
+Soil number: 5
+
+%%%%%%%%%%%%%%%% Simulation properties %%%%%%%%%%%%%%%%%%%
+Folder Number: 1
+Simulation Run Time: 20.0 [s]
+Simulation Steps Number:  346876 
+Simulation Average Step Size: 0.0000577 [s]
+Simulation CPU Time: 365.8[s]
