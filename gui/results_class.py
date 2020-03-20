@@ -33,5 +33,7 @@ class Results(object):
                 print('Error: ' + filename, 'is not a .txt file.')
 
 
+        
 if __name__ == "__main__":
     results = Results()
+
