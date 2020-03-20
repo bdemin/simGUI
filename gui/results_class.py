@@ -15,17 +15,17 @@ class Results(object):
 
 
     def build_data(self):
-        
-        data_folder = 'simulation_results//Simulation_1//'
-        self.files = {}
 
-        for filename in os.listdir(data_folder):
+        self.data_folder = 'simulation_results//Simulation_1//'
+        self.results_data = {}
+
+        for filename in os.listdir(self.data_folder):
             if filename.endswith('.txt'):
                 print('Added', filename)
                 
                 obj_type = filename.split('.')[0].lower()
                 try:
-                    self.files[obj_type] = np.loadtxt(data_folder + filename, delimiter=',')
+                    self.results_data[obj_type] = np.loadtxt(self.data_folder + filename, delimiter=',')
                 except:
                     print('Error: ' + filename, 'has invalid data.')
 
