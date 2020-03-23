@@ -27,11 +27,6 @@ def run_m113():
 
     print('Done')
 
-def progress(progressBar, tabWidget):
-    for i in range(1, 101):
-        progressBar.setValue(i)
-    tabWidget.setDisabled(False)
-
 def run_async(tabWidget):
     cwd = getcwd()
     chdir(cwd + "\\matlab_code_test")
@@ -57,4 +52,4 @@ def run_exec(vehicle):
 
 
 if __name__ == "__main__":
-    run()
+    run_exec()
