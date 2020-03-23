@@ -102,11 +102,11 @@ class MyQtApp(Ui_MainWindow):
                             'Sand': [2,3,4],
                             'Clay': [3,4,5]}
 
-    @property
-    def get_vehicle_type(vehicle):
+    def get_vehicle_type(self, vehicle):
         if vehicle in ['M113', 'MK4', 'Namer']:
             return 'wheeled'
         return 'tracked'
+
 
 if __name__ == "__main__":
     import sys
