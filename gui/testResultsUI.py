@@ -1,3 +1,4 @@
+# from PySide2 import QtWidgets
 from PyQt5 import QtGui, QtWidgets
 from PyQt5 import QtCore
 
@@ -15,12 +16,27 @@ class MyQtApp(Ui_MainWindow):
         self.pushBtnChsPosTime.clicked.connect(self.invoke_plot)
         self.pushBtnChsVelTime.clicked.connect(self.invoke_plot)
 
+    def invoke_plot(self):
+        sender_name = self.window.sender().objectName()
+
+        if sender_name == 'pushBtnChsPosTime':
+            data = ([0,1,2,3,4], [10,1,20,3,40])
+            self.canvas.axes.clear()
+            self.canvas.axes.plot(data, '*-')
+            self.canvas.draw()
+
+        elif sender_name == 'pushBtnChsVelTime':
+            self.canvas.axes.clear()
+            self.canvas.draw()
+
 
 import matplotlib
 matplotlib.use('Qt5Agg')
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
+
+
 class MplCanvas(FigureCanvasQTAgg):
 
     def __init__(self, parent=None, width=5, height=4, dpi=100):
