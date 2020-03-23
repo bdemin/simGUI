@@ -7,6 +7,14 @@ from gui.simulation_trigger import run_matlab_exec
 from gui.output_handler import get_output
 
 
+def run_simulation_ui():
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = MyQtApp(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
+
+    
 class MyQtApp(Ui_MainWindow):
     def __init__(self, MainWindow):
         self.setupUi(MainWindow)
@@ -109,9 +117,4 @@ class MyQtApp(Ui_MainWindow):
 
 
 if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = MyQtApp(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    run_simulation_ui()
