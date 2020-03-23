@@ -32,22 +32,24 @@ class MyQtApp(Ui_MainWindow):
         self.spinBoxSimTime.valueChanged.connect(self.on_spinboxSimTime_val_change)
         self.sliderSimTime.valueChanged.connect(self.on_sliderSimTime_move)
     
-        self.pushbtnRunSim.clicked.connect(self.on_sim_trigger)
+        self.pushbtnRunSim.clicked.connect(self.invoke_sim_trigger)
 
-    def on_sim_trigger(self):
-        self.tabWidget.setDisabled(True)
-    
+    def invoke_sim_trigger(self):
+        # Slot for triggering a simulation run
+
+        self.tabWidget.setDisabled(True) # Grey out the GUI
+
+        # Get vehicle data
+        vehicle = self.comboBoxVehicleType.currentText()
+        vehicle_type = self.get_vehicle_type(vehicle)
+        
+        # Prepare output for matlab
         get_output(self)
 
-        vehicle = self.comboBoxVehicleType.currentText()
-        simulation_trigger.run_exec(vehicle)
+        # Run simulation
+        if run_matlab_exec(vehicle_type):
+            self.tabWidget.setDisabled(False)
 
-        # simulation_trigger.run()
-        # simulation_trigger.run_m113()
-        # simulation_trigger.progress(self.progressBar, self.tabWidget)
-        # simulation_trigger.run_async(self.tabWidget)
-        
-        
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
@@ -100,6 +102,11 @@ class MyQtApp(Ui_MainWindow):
                             'Sand': [2,3,4],
                             'Clay': [3,4,5]}
 
+    @property
+    def get_vehicle_type(vehicle):
+        if vehicle in ['M113', 'MK4', 'Namer']:
+            return 'wheeled'
+        return 'tracked'
 
 if __name__ == "__main__":
     import sys
