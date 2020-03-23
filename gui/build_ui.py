@@ -6,8 +6,10 @@ import os
 print('Building Started')
 
 cwd = os.getcwd()
-input_filename = 'my_gui.ui'
-output_filename = 'main_window.py'
+# input_filename = 'my_gui.ui'
+input_filename = 'results_gui.ui'
+# output_filename = 'main_window.py'
+output_filename = 'results_window.py'
 
 
 username = os.getlogin() +'\\'
