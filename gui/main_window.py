@@ -419,7 +419,7 @@ class Ui_MainWindow(object):
         self.pushbtnRunSim.setText(_translate("MainWindow", "Run Simulation"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionOpenResults.setText(_translate("MainWindow", "Open Results"))
-import resources.resources
+import gui.resources.resources
 
 
 if __name__ == "__main__":

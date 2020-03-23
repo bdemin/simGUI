@@ -1,10 +1,10 @@
-# from PySide2 import QtWidgets
+import sys
+
 from PyQt5 import QtGui, QtWidgets
 
-from main_window import Ui_MainWindow
-
-import simulation_trigger
-from output_handler import get_output
+from gui.main_window import Ui_MainWindow
+from gui.simulation_trigger import run_matlab_exec
+from gui.output_handler import get_output
 
 
 class MyQtApp(Ui_MainWindow):
