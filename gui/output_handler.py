@@ -39,21 +39,4 @@ def prepare_output(qt_app):
     with open(save_folder + 'input2matlab' + '.txt', 'w') as out_file:
             json.dump(output_data, out_file)
 
-    
-    out_dict['terrainSlopeAngle'] = qt_app.spinBoxSlope.value()
 
-    out_dict['terrainGroundType'] = qt_app.comboBoxTerrainTypeOptions.currentText()
-
-    out_dict['terrainMu'] = qt_app.terrain_types[index]
-
-    # TO BE ADDED:
-    out_dict['simulationTime'] = qt_app.spinBoxSimTime.value()
-
-    output = json.dumps(out_dict)
-    print(output)
-
-
-def get_vehicle_type(vehicle):
-    if vehicle in ['M113', 'MK4', 'Namer']:
-        return 'Wheeled'
-    return 'Tracked'
