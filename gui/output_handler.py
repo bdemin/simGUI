@@ -1,16 +1,44 @@
 import json
 
 
-def get_output(qt_app):
-    out_dict = {}
+save_folder = '..//mobility_predictor//input//'
 
-    out_dict['vehicleName'] = qt_app.comboBoxVehicleType.currentText()
-    out_dict['vehicleType'] = get_vehicle_type(out_dict['vehicleName'])
+def prepare_output(qt_app):
+    vehicle = {}
+    terrain = {}
+    simulation = {}
+    control = {}
 
-    out_dict['differential'] = qt_app.checkBoxDifferential.isChecked()
-    
+    vehicle['Name'] = qt_app.comboBoxVehicleType.currentText()
+    vehicle['Type'] = qt_app.vehicle_type
+    vehicle['Differential_Mode'] = qt_app.checkBoxDifferential.isChecked()
+    vehicle['Damper'] = '111111' # what is this?
+
     index = qt_app.comboBoxTerrainTypeOptions.currentText()
-    out_dict['terrainProfileType'] = qt_app.terrain_types[index]
+    terrain['Type'] = qt_app.terrain_types[index] # Can be simplified?
+    terrain['mu'] = qt_app.terrain_types[index]
+    terrain['Profile'] = qt_app.comboBoxTerrainTypeOptions.currentText()
+    terrain['Road_Start'] = -10
+    terrain['Road_End'] = 600
+    terrain['Offset'] = -0.9
+
+    terrain['Slope_Angle'] = qt_app.spinBoxSlope.value()
+
+    simulation['Time'] = qt_app.spinBoxSimTime.value()
+
+    control['Velocity_Spline'] = 0
+
+    # Prepare a dict container for JSON output
+    output_data = {}
+    output_data['vehicle'] = vehicle
+    output_data['terrain'] = terrain
+    output_data['simulation'] = simulation
+    output_data['control'] = control
+
+    # Output parameters into JSON files
+    with open(save_folder + 'input2matlab' + '.txt', 'w') as out_file:
+            json.dump(output_data, out_file)
+
     
     out_dict['terrainSlopeAngle'] = qt_app.spinBoxSlope.value()
 
