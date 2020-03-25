@@ -35,8 +35,45 @@ def prepare_output(qt_app):
     output_data['simulation'] = simulation
     output_data['control'] = control
 
+    fake_data_test(output_data) # TESTING
+
     # Output parameters into JSON files
     with open(save_folder + 'input2matlab' + '.txt', 'w') as out_file:
             json.dump(output_data, out_file)
 
 
+def fake_data_test(data):
+    data['vehicle']['Type'] = 'Track'
+    data['vehicle']['Name'] = 'Namer'
+    
+    data['terrain']['Type'] = 'Road'
+    data['terrain']['mu'] = 0.2
+    data['terrain']['Profile'] = 'Slope_And_Step'
+    data['terrain']['Road_Start'] = -10
+    data['terrain']['Road_End'] = 600
+    data['terrain']['Offset'] = -0.9
+
+    data['simulation']['Time'] = 60
+
+    import numpy as np
+    data['control']['Velocity_Spline'] = np.zeros((2, 6))
+    data['control']['Velocity_Spline'][2:-1] = 5.55
+    data['control']['Velocity_Spline'][0,1] = 5
+    data['control']['Velocity_Spline'][0,2] = 10
+    data['control']['Velocity_Spline'][0,3] = 35
+    data['control']['Velocity_Spline'][0,4] = 40
+    data['control']['Velocity_Spline'][0,5] = 100
+    data['control']['Velocity_Spline'] = data['control']['Velocity_Spline'].tolist()
+
+    # Fix key names
+    data['Vehicle'] = data['vehicle']
+    del data['vehicle']
+
+    data['Terrain'] = data['terrain']
+    del data['terrain']
+
+    data['Simulation'] = data['simulation']
+    del data['simulation']
+
+    data['Control'] = data['control']
+    del data['control']
