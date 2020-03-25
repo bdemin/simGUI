@@ -4,7 +4,7 @@ from PyQt5 import QtGui, QtWidgets
 
 from gui.main_window import Ui_MainWindow
 from gui.simulation_trigger import run_matlab_exec
-from gui.output_handler import get_output
+from gui.output_handler import prepare_output
 
 
 def run_simulation_ui():
@@ -49,13 +49,13 @@ class MyQtApp(Ui_MainWindow):
 
         # Get vehicle data
         vehicle = self.comboBoxVehicleType.currentText()
-        vehicle_type = self.get_vehicle_type(vehicle)
+        self.vehicle_type = self.get_vehicle_type(vehicle)
         
-        # Prepare output for matlab
-        get_output(self)
+        # Prepare and save output for matlab
+        prepare_output(self)
 
         # Run simulation
-        if run_matlab_exec(vehicle_type):
+        if run_matlab_exec(self.vehicle_type):
             self.tabWidget.setDisabled(False)
 
     def on_sliderHeight_move(self, val):
