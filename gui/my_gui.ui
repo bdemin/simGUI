@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>704</width>
-    <height>778</height>
+    <width>720</width>
+    <height>909</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -175,7 +175,7 @@
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_10">
+          <layout class="QVBoxLayout" name="verticalLayout_21">
            <item>
             <widget class="QFrame" name="frameTerrainType">
              <property name="frameShape">
@@ -184,9 +184,9 @@
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <layout class="QVBoxLayout" name="verticalLayout_19">
               <item>
-               <widget class="QLabel" name="labelTerrainType">
+               <widget class="QLabel" name="labelTerrainProp">
                 <property name="font">
                  <font>
                   <pointsize>12</pointsize>
@@ -195,7 +195,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>Terrain Type</string>
+                 <string>Terrain Properties</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -203,107 +203,259 @@
                </widget>
               </item>
               <item>
-               <widget class="QFrame" name="frameTerrainTypeOptions">
+               <widget class="QFrame" name="frameProps">
                 <property name="frameShape">
                  <enum>QFrame::StyledPanel</enum>
                 </property>
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
                  <item>
-                  <widget class="QFrame" name="frameTerrainTypeChoice">
+                  <widget class="QFrame" name="frameTerrainPropsParams">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_9">
+                   <layout class="QHBoxLayout" name="horizontalLayout">
                     <item>
-                     <widget class="QRadioButton" name="radioBtnRoad">
-                      <property name="text">
-                       <string>Road</string>
+                     <widget class="QFrame" name="frameTerrainTypeChoice">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
-                      <property name="checked">
-                       <bool>true</bool>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
                       </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_9">
+                       <item>
+                        <widget class="QRadioButton" name="radioBtnRoad">
+                         <property name="text">
+                          <string>Road</string>
+                         </property>
+                         <property name="checked">
+                          <bool>true</bool>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QRadioButton" name="radioBtnSoil">
+                         <property name="text">
+                          <string>Soil</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="verticalSpacer_4">
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>20</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QRadioButton" name="radioBtnSoil">
-                      <property name="text">
-                       <string>Soil</string>
+                     <widget class="QFrame" name="frameTerrainTypeParams">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_2">
+                       <item>
+                        <widget class="QLabel" name="labelParams">
+                         <property name="text">
+                          <string>Params:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelTerrainPropParams">
+                         <property name="text">
+                          <string>init</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="labelTerrainSoilType">
+                         <property name="text">
+                          <string>Soil Type:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QComboBox" name="comboBoxTerrainPropsSoilType">
+                         <item>
+                          <property name="text">
+                           <string>Default</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Dry Sand</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Megiddo_B</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>LETE Sand</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Heavy Clay W.E.S</string>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="verticalSpacer">
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>20</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
                      </widget>
+                    </item>
+                    <item>
+                     <spacer name="horizontalSpacer">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>40</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                     </spacer>
                     </item>
                    </layout>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frameTerrainTypeParams">
+                  <widget class="QFrame" name="frameTerrainPropsGeneral">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_2">
+                   <layout class="QVBoxLayout" name="verticalLayout_5">
                     <item>
-                     <widget class="QLabel" name="labelTerrainTypeOptions">
+                     <widget class="QLabel" name="labelStartPoint">
                       <property name="text">
-                       <string>Options:</string>
+                       <string>Start Point:</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QComboBox" name="comboBoxTerrainTypeOptions">
-                      <item>
-                       <property name="text">
-                        <string>Sand</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>LETE Sand</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>Clay</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="labelParams">
-                      <property name="text">
-                       <string>Params:</string>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxStartPoint">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-1.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.100000000000000</double>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLabel" name="labelTerrainParams">
+                     <widget class="QSlider" name="sliderStartPoint">
+                      <property name="minimum">
+                       <number>-10</number>
+                      </property>
+                      <property name="maximum">
+                       <number>10</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="invertedAppearance">
+                       <bool>false</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelEndPoint">
                       <property name="text">
-                       <string>mu = 1 | blah = 2</string>
+                       <string>End Point:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxEndPoint"/>
+                    </item>
+                    <item>
+                     <widget class="QSlider" name="sliderEndPoint">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelOffset">
+                      <property name="text">
+                       <string>Z Offset:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSpinBox" name="spinBoxOffset">
+                      <property name="minimum">
+                       <number>-45</number>
+                      </property>
+                      <property name="maximum">
+                       <number>45</number>
+                      </property>
+                      <property name="singleStep">
+                       <number>5</number>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QSlider" name="sliderSlope_2">
+                      <property name="minimum">
+                       <number>-45</number>
+                      </property>
+                      <property name="maximum">
+                       <number>45</number>
+                      </property>
+                      <property name="singleStep">
+                       <number>5</number>
+                      </property>
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
                      </widget>
                     </item>
                    </layout>
                   </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
                  </item>
                 </layout>
                </widget>
@@ -345,7 +497,7 @@
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <layout class="QHBoxLayout" name="horizontalLayout_3">
                  <item>
                   <widget class="QFrame" name="frameTerrainProfileType">
                    <property name="frameShape">
@@ -354,51 +506,83 @@
                    <property name="frameShadow">
                     <enum>QFrame::Raised</enum>
                    </property>
-                   <layout class="QVBoxLayout" name="verticalLayout_5">
+                   <layout class="QVBoxLayout" name="verticalLayout_10">
                     <item>
-                     <widget class="QLabel" name="labelProfileType">
-                      <property name="text">
-                       <string>Profile Type:</string>
+                     <widget class="QFrame" name="frame_2">
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
                       </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_3">
+                       <item>
+                        <widget class="QLabel" name="labelProfileType">
+                         <property name="text">
+                          <string>Profile Type:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QComboBox" name="comboBoxTerrainProfileType">
+                         <item>
+                          <property name="text">
+                           <string>Flat</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Step</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Slope</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Slope and Step</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Sinus</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Gaussian</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text">
+                           <string>Random</string>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="verticalSpacer_5">
+                         <property name="orientation">
+                          <enum>Qt::Vertical</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>20</width>
+                           <height>40</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
                      </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="comboBoxTerrainProfileType">
-                      <item>
-                       <property name="text">
-                        <string>Flat</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>Step</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>Slope</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                    <item>
-                     <spacer name="verticalSpacer">
-                      <property name="orientation">
-                       <enum>Qt::Vertical</enum>
-                      </property>
-                      <property name="sizeHint" stdset="0">
-                       <size>
-                        <width>20</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                     </spacer>
                     </item>
                    </layout>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frameTerrainProfileParams">
+                  <widget class="QFrame" name="frame_3">
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
                    </property>
@@ -407,14 +591,21 @@
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_4">
                     <item>
-                     <widget class="QLabel" name="labelHeight">
+                     <widget class="QLabel" name="label_2">
                       <property name="text">
-                       <string>Height:</string>
+                       <string>Options:</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxHeight">
+                     <widget class="QLabel" name="labelTerrainCustom_1">
+                      <property name="text">
+                       <string>Label 1:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxTerrainCustom_1">
                       <property name="decimals">
                        <number>1</number>
                       </property>
@@ -430,71 +621,94 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSlider" name="sliderHeight">
+                     <widget class="QLabel" name="labelTerrainCustom_2">
+                      <property name="text">
+                       <string>Label 2:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxTerrainCustom_2">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
                       <property name="minimum">
-                       <number>-10</number>
+                       <double>-1.000000000000000</double>
                       </property>
                       <property name="maximum">
-                       <number>10</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                      <property name="invertedAppearance">
-                       <bool>false</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="labelDistance">
-                      <property name="text">
-                       <string>Distance From Vehicle:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxDistance"/>
-                    </item>
-                    <item>
-                     <widget class="QSlider" name="sliderDistance">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="labelAngle">
-                      <property name="text">
-                       <string>Slope Angle:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QSpinBox" name="spinBoxSlope">
-                      <property name="minimum">
-                       <number>-45</number>
-                      </property>
-                      <property name="maximum">
-                       <number>45</number>
+                       <double>1.000000000000000</double>
                       </property>
                       <property name="singleStep">
-                       <number>5</number>
+                       <double>0.100000000000000</double>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSlider" name="sliderSlope">
+                     <widget class="QLabel" name="labelTerrainCustom_3">
+                      <property name="text">
+                       <string>Label 3:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxTerrainCustom_3">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
                       <property name="minimum">
-                       <number>-45</number>
+                       <double>-1.000000000000000</double>
                       </property>
                       <property name="maximum">
-                       <number>45</number>
+                       <double>1.000000000000000</double>
                       </property>
                       <property name="singleStep">
-                       <number>5</number>
+                       <double>0.100000000000000</double>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelTerrainCustom_4">
+                      <property name="text">
+                       <string>Label 4:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxTerrainCustom_4">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-1.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.100000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="labelTerrainCustom_5">
+                      <property name="text">
+                       <string>Label 5:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="doubleSpinBoxTerrainCustom_5">
+                      <property name="decimals">
+                       <number>1</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-1.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.100000000000000</double>
                       </property>
                      </widget>
                     </item>
@@ -728,7 +942,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>704</width>
+     <width>720</width>
      <height>26</height>
     </rect>
    </property>
