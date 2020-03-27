@@ -19,7 +19,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabVehicle">
        <attribute name="title">
@@ -665,7 +665,7 @@
                  <number>1</number>
                 </property>
                 <property name="value">
-                 <number>20</number>
+                 <number>40</number>
                 </property>
                </widget>
               </item>
@@ -684,7 +684,7 @@
                  <number>100</number>
                 </property>
                 <property name="value">
-                 <number>20</number>
+                 <number>40</number>
                 </property>
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
