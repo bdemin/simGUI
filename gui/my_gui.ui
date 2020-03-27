@@ -8,7 +8,7 @@
     <x>0</x>
     <y>0</y>
     <width>704</width>
-    <height>737</height>
+    <height>778</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabVehicle">
        <attribute name="title">
@@ -715,26 +715,9 @@
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radiobtnShowVid">
-      <property name="text">
-       <string>Show Video</string>
-      </property>
-     </widget>
-    </item>
-    <item>
      <widget class="QPushButton" name="pushbtnRunSim">
       <property name="text">
        <string>Run Simulation</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QProgressBar" name="progressBar">
-      <property name="value">
-       <number>0</number>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -746,7 +729,7 @@
      <x>0</x>
      <y>0</y>
      <width>704</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
