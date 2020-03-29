@@ -1,7 +1,7 @@
 ''' Utitily script for building the
 UI class py file using pyuic5 '''
 
-import os
+import os, fileinput, sys
 
 
 print('Select which window to build:')
@@ -22,6 +22,7 @@ while not selection:
         selection = None
 
 print('Building Started')
+
 cwd = os.getcwd()
 username = os.getlogin() +'\\'
 sys_dir = os.path.join('C:\\Users', username)
@@ -35,6 +36,14 @@ command.append(cwd)
 command.append('\\gui\\' + output_filename)
 
 os.system(''.join(command))
+
+# Edit resources import inside the Python file
+search_str = 'import resource_file_rc'
+replace_str = 'import gui.resources.resources'
+for line in fileinput.input('gui/' + output_filename, inplace = 1):
+    if search_str in line:
+        line = line.replace(search_str, replace_str)
+    sys.stdout.write(line)
 
 print('Building Completed')
 print('Output file can be found in:', cwd)
