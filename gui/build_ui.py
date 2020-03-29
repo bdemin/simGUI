@@ -1,17 +1,28 @@
-# Utitily script for building the UI class py file using pyuic5
+''' Utitily script for building the
+UI class py file using pyuic5 '''
 
 import os
 
 
+print('Select which window to build:')
+print('1 - main window')
+print('2 - results window')
+
+selection = None
+while not selection:
+    selection = input('Selection: ')
+    if selection == '1':
+        input_filename = 'main_window.ui'
+        output_filename = 'main_window.py'
+    elif selection == '2':
+        input_filename = 'results_window.ui'
+        output_filename = 'results_window.py'
+    else:
+        print('Invalid selection.')
+        selection = None
+
 print('Building Started')
-
 cwd = os.getcwd()
-# input_filename = 'my_gui.ui'
-input_filename = 'results_gui.ui'
-# output_filename = 'main_window.py'
-output_filename = 'results_window.py'
-
-
 username = os.getlogin() +'\\'
 sys_dir = os.path.join('C:\\Users', username)
 
