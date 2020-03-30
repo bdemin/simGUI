@@ -22,6 +22,8 @@ class MyQtApp(Ui_MainWindow):
 
         self.window = MainWindow
 
+        self.connect_all_widget_pairs()
+
         self.checkBoxDifferential.setEnabled(False)
         self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
         self.comboBoxVehicleType.currentTextChanged.connect(self.on_vehicle_type_change)
@@ -89,6 +91,17 @@ class MyQtApp(Ui_MainWindow):
 
     def on_spinboxSimTime_val_change(self, val):
         self.sliderSimTime.setValue(val)
+    def connect_all_widget_pairs(self):
+        self.spinBox_StartPoint.valueChanged.connect(self.widget_binding_handler)
+        self.slider_StartPoint.valueChanged.connect(self.widget_binding_handler)
+        self.spinBox_EndPoint.valueChanged.connect(self.widget_binding_handler)
+        self.slider_EndPoint.valueChanged.connect(self.widget_binding_handler)
+        self.doubleSpinBox_Offset.valueChanged.connect(self.widget_binding_handler)
+        self.slider_Offset.valueChanged.connect(self.widget_binding_handler)
+        self.spinBox_Vel.valueChanged.connect(self.widget_binding_handler)
+        self.slider_Vel.valueChanged.connect(self.widget_binding_handler)
+        self.spinBox_SimTime.valueChanged.connect(self.widget_binding_handler)
+        self.slider_SimTime.valueChanged.connect(self.widget_binding_handler)
 
     def on_vehicle_type_change(self, val):
         image = ":/Vehicles/" + val + ".jpg"
@@ -98,7 +111,6 @@ class MyQtApp(Ui_MainWindow):
             self.checkBoxDifferential.setEnabled(True)
         else:
             self.checkBoxDifferential.setEnabled(False)
-
 
     def on_terrain_type_change(self, val):
         values = self.terrain_types[val] # list
