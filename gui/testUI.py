@@ -58,6 +58,23 @@ class MyQtApp(Ui_MainWindow):
         if run_matlab_exec(self.vehicle_type):
             self.tabWidget.setDisabled(False)
 
+    def widget_binding_handler(self, val):
+        # Slot to handle Slider-SpinBox widget pair bindings
+
+        sender_name = self.window.sender().objectName()
+
+        if 'Box' in sender_name:
+            method = 'slider_' + sender_name.split('_')[-1]
+            if 'Offset' in method:
+                val *= 10
+        elif 'slider' in sender_name:
+            method = 'spinBox_' + sender_name.split('_')[-1]
+            if 'Offset' in method:
+                method = 'doubleS' + method[1:]
+                val /= 10
+        result = getattr(self, method).setValue(val)
+        
+
     def on_sliderHeight_move(self, val):
         self.doubleSpinBoxHeight.setValue(val / 10)
 
