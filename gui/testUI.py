@@ -20,6 +20,8 @@ class MyQtApp(Ui_MainWindow):
         self.setupUi(MainWindow)
         self.set_terrain_types()
 
+        self.window = MainWindow
+
         self.checkBoxDifferential.setEnabled(False)
         self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
         self.comboBoxVehicleType.currentTextChanged.connect(self.on_vehicle_type_change)
