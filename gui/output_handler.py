@@ -15,8 +15,8 @@ def prepare_output(qt_app):
     vehicle['Damper'] = '111111' # what is this?
 
     # index = qt_app.comboBoxTerrainProfileType.currentText() # Update needed
-    terrain['Type'] = qt_app.terrain_types[index] # Can be simplified?
-    terrain['mu'] = qt_app.terrain_types[index]
+    # terrain['Type'] = qt_app.terrain_types[index] # Can be simplified?
+    # terrain['mu'] = qt_app.terrain_types[index]
     terrain['Profile'] = qt_app.comboBoxTerrainTypeOptions.currentText()
     terrain['Road_Start'] = -10
     terrain['Road_End'] = 600
