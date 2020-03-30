@@ -32,9 +32,6 @@ class MyQtApp(Ui_MainWindow):
         
 
 
-
-
-
     def invoke_sim_trigger(self):
         # Slot for triggering a simulation run
 
@@ -67,30 +64,6 @@ class MyQtApp(Ui_MainWindow):
                 val /= 10
         result = getattr(self, method).setValue(val)
         
-
-    def on_sliderHeight_move(self, val):
-        self.doubleSpinBoxHeight.setValue(val / 10)
-
-    def on_spinboxHeight_val_change(self, val):
-        self.sliderHeight.setValue(val * 10)
-
-    def on_sliderDistance_move(self, val):
-        self.doubleSpinBoxDistance.setValue(val)
-
-    def on_spinboxDistance_val_change(self, val):
-        self.sliderDistance.setValue(val)
-
-    def on_sliderSlope_move(self, val):
-        self.spinBoxSlope.setValue(val)
-
-    def on_spinboxAngle_val_change(self, val):
-        self.sliderSlope.setValue(val)
-
-    def on_sliderSimTime_move(self, val):
-        self.spinBoxSimTime.setValue(val)
-
-    def on_spinboxSimTime_val_change(self, val):
-        self.sliderSimTime.setValue(val)
     def connect_all_widget_pairs(self):
         self.spinBox_StartPoint.valueChanged.connect(self.widget_binding_handler)
         self.slider_StartPoint.valueChanged.connect(self.widget_binding_handler)
