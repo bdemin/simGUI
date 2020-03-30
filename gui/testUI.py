@@ -26,6 +26,9 @@ class MyQtApp(Ui_MainWindow):
 
         self.connect_all_widget_pairs()
 
+        self.radioBtnRoad.toggled.connect(self.radio_btn_change)
+        self.radioBtnSoil.toggled.connect(self.radio_btn_change)
+        
         self.checkBoxDifferential.setEnabled(False)
         self.comboBoxVehicleType.textHighlighted.connect(self.on_vehicle_type_change)
         self.comboBoxVehicleType.currentTextChanged.connect(self.on_vehicle_type_change)
@@ -92,6 +95,17 @@ class MyQtApp(Ui_MainWindow):
     def on_terrain_type_change(self, val):
         values = self.terrain_types[val] # list
         self.labelTerrainParams.setText(f"\u03BC = {values[0]} |  Ci = {values[1]} | Ri = {values[2]}") # Remove?
+
+    def radio_btn_change(self, val):
+        sender_name = self.window.sender().objectName()
+        if val and 'Soil' in sender_name:
+            self.comboBoxTerrainPropsSoilType.setDisabled(False)
+            self.labelTerrainPropParams.setText('TBD')
+            # Update labelTerrainPropParams based on Soils list (csv)
+        elif val and 'Road' in sender_name:
+            self.comboBoxTerrainPropsSoilType.setDisabled(True)
+            vals = [0.9, 1, 100]
+            self.labelTerrainPropParams.setText((f"\u03BC = {vals[0]} |  Ri = {vals[1]} | Ci = {vals[2]}"))
 
     def on_terrain_profile_change(self, val):
         if val == 'Flat':
