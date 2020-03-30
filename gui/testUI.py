@@ -26,21 +26,10 @@ class MyQtApp(Ui_MainWindow):
 
         self.comboBoxTerrainProfileType.textHighlighted.connect(self.on_terrain_profile_change)
         
-        self.comboBoxTerrainTypeOptions.currentTextChanged.connect(self.on_terrain_type_change)
 
-        self.doubleSpinBoxHeight.valueChanged.connect(self.on_spinboxHeight_val_change)
-        self.sliderHeight.valueChanged.connect(self.on_sliderHeight_move)
 
-        self.doubleSpinBoxDistance.valueChanged.connect(self.on_spinboxDistance_val_change)
-        self.sliderDistance.valueChanged.connect(self.on_sliderDistance_move)
 
-        self.spinBoxSlope.valueChanged.connect(self.on_spinboxAngle_val_change)
-        self.sliderSlope.valueChanged.connect(self.on_sliderSlope_move)
 
-        self.spinBoxSimTime.valueChanged.connect(self.on_spinboxSimTime_val_change)
-        self.sliderSimTime.valueChanged.connect(self.on_sliderSimTime_move)
-    
-        self.pushbtnRunSim.clicked.connect(self.invoke_sim_trigger)
 
     def invoke_sim_trigger(self):
         # Slot for triggering a simulation run
