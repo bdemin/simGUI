@@ -30,7 +30,9 @@ class MyQtApp(Ui_MainWindow):
 
         self.comboBoxTerrainProfileType.textHighlighted.connect(self.on_terrain_profile_change)
         
+        # self.comboBoxTerrainTypeOptions.currentTextChanged.connect(self.on_terrain_type_change)
 
+        self.pushbtnRunSim.clicked.connect(self.invoke_sim_trigger)
 
     def invoke_sim_trigger(self):
         # Slot for triggering a simulation run
