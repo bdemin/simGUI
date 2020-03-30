@@ -20,6 +20,8 @@ class MyQtApp(Ui_MainWindow):
         self.setupUi(MainWindow)
         self.set_terrain_types()
 
+        self.init_gui()
+
         self.window = MainWindow
 
         self.connect_all_widget_pairs()
@@ -109,6 +111,11 @@ class MyQtApp(Ui_MainWindow):
         if vehicle in ['M113', 'MK4', 'Namer']:
             return 'wheeled'
         return 'tracked'
+
+    def init_gui(self):
+        self.comboBoxTerrainPropsSoilType.setDisabled(True)
+        vals = [0.9, 1, 100]
+        self.labelTerrainPropParams.setText((f"\u03BC = {vals[0]} |  Ri = {vals[1]} | Ci = {vals[2]}"))
 
 
 if __name__ == "__main__":
