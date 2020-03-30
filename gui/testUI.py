@@ -91,7 +91,7 @@ class MyQtApp(Ui_MainWindow):
 
     def on_terrain_type_change(self, val):
         values = self.terrain_types[val] # list
-        self.labelTerrainParams.setText(f"\u03BC = {values[0]} |  Ci = {values[1]} | Ri = {values[2]}")
+        self.labelTerrainParams.setText(f"\u03BC = {values[0]} |  Ci = {values[1]} | Ri = {values[2]}") # Remove?
 
     def on_terrain_profile_change(self, val):
         if val == 'Flat':
