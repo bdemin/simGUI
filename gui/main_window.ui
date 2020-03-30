@@ -383,7 +383,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSpinBox" name="spinBoxStartPoint">
+                     <widget class="QSpinBox" name="spinBox_StartPoint">
                       <property name="minimum">
                        <number>-100</number>
                       </property>
@@ -399,7 +399,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSlider" name="sliderStartPoint">
+                     <widget class="QSlider" name="slider_StartPoint">
                       <property name="minimum">
                        <number>-100</number>
                       </property>
@@ -428,7 +428,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSpinBox" name="spinBoxEndPoint">
+                     <widget class="QSpinBox" name="spinBox_EndPoint">
                       <property name="minimum">
                        <number>100</number>
                       </property>
@@ -444,7 +444,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSlider" name="sliderEndPoint">
+                     <widget class="QSlider" name="slider_EndPoint">
                       <property name="minimum">
                        <number>100</number>
                       </property>
@@ -470,7 +470,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QDoubleSpinBox" name="doubleSpinBoxOffset">
+                     <widget class="QDoubleSpinBox" name="doubleSpinBox_Offset">
                       <property name="decimals">
                        <number>1</number>
                       </property>
@@ -489,15 +489,18 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QSlider" name="sliderSlope_2">
+                     <widget class="QSlider" name="slider_Offset">
                       <property name="minimum">
-                       <number>-45</number>
+                       <number>-10</number>
                       </property>
                       <property name="maximum">
-                       <number>45</number>
+                       <number>10</number>
                       </property>
                       <property name="singleStep">
-                       <number>5</number>
+                       <number>1</number>
+                      </property>
+                      <property name="value">
+                       <number>-9</number>
                       </property>
                       <property name="orientation">
                        <enum>Qt::Horizontal</enum>
@@ -824,7 +827,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spinBoxVel">
+               <widget class="QSpinBox" name="spinBox_Vel">
                 <property name="minimum">
                  <number>5</number>
                 </property>
@@ -837,7 +840,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="sliderVel">
+               <widget class="QSlider" name="slider_Vel">
                 <property name="minimum">
                  <number>5</number>
                 </property>
@@ -921,7 +924,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spinBoxSimTime">
+               <widget class="QSpinBox" name="spinBox_SimTime">
                 <property name="minimum">
                  <number>0</number>
                 </property>
@@ -934,7 +937,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSlider" name="sliderSimTime">
+               <widget class="QSlider" name="slider_SimTime">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                   <horstretch>0</horstretch>
