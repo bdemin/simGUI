@@ -26,6 +26,8 @@ class MyQtApp(Ui_MainWindow):
 
         self.connect_all_widget_pairs()
 
+        self.comboBoxTerrainProfileType.currentTextChanged.connect(self.on_terrain_profile_type_change)
+        
         self.radioBtnRoad.toggled.connect(self.radio_btn_change)
         self.radioBtnSoil.toggled.connect(self.radio_btn_change)
         
@@ -106,6 +108,23 @@ class MyQtApp(Ui_MainWindow):
             self.comboBoxTerrainPropsSoilType.setDisabled(True)
             vals = [0.9, 1, 100]
             self.labelTerrainPropParams.setText((f"\u03BC = {vals[0]} |  Ri = {vals[1]} | Ci = {vals[2]}"))
+
+    def on_terrain_profile_type_change(self, val):
+        if val == 'Flat':
+            pass
+        elif val == 'Slope':
+            pass
+        elif val == 'Step':
+            pass
+        elif val == 'Slope and Step':
+            pass
+        elif val == 'Sinus':
+            pass
+        elif val == 'Gaussian':
+            pass
+        elif val == 'Random':
+            pass
+        print(val)
 
     def on_terrain_profile_change(self, val):
         if val == 'Flat':
