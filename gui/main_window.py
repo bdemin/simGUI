@@ -451,6 +451,9 @@ class Ui_MainWindow(object):
         self.pushbtnRunSim = QtWidgets.QPushButton(self.centralwidget)
         self.pushbtnRunSim.setObjectName("pushbtnRunSim")
         self.verticalLayout_11.addWidget(self.pushbtnRunSim)
+        self.pushbtnExitApp = QtWidgets.QPushButton(self.centralwidget)
+        self.pushbtnExitApp.setObjectName("pushbtnExitApp")
+        self.verticalLayout_11.addWidget(self.pushbtnExitApp)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 720, 26))
@@ -519,6 +522,7 @@ class Ui_MainWindow(object):
         self.labelSimTime.setText(_translate("MainWindow", "Set Simulation Time:"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabGeneral), _translate("MainWindow", "General"))
         self.pushbtnRunSim.setText(_translate("MainWindow", "Run Simulation"))
+        self.pushbtnExitApp.setText(_translate("MainWindow", "Exit Program"))
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionOpenResults.setText(_translate("MainWindow", "Open Results"))
 import gui.resources.resources
