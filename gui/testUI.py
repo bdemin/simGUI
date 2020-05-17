@@ -112,6 +112,23 @@ class MyQtApp(Ui_MainWindow):
             self.labelTerrainPropParams.setText((f"\u03BC = {vals[0]} |  Ri = {vals[1]} | Ci = {vals[2]}"))
 
     def on_terrain_profile_type_change(self, val):
+        # labelTerrainCustom_1 - 5
+        # doubleSpinBoxTerrainCustom_1
+
+        def enable_disable(widget, _input):
+            index = 1
+            for flag in _input:
+                method = widget + '_' + str(index)
+                attr = getattr(self, method)
+                if flag:
+                    method_to_call = getattr(attr, 'setVisible')
+                    method_to_call(True)
+                else:
+                    method_to_call = getattr(attr, 'setVisible')
+                    method_to_call(False) # !
+                index += 1
+
+        # ADD VERTICAL SPACER
         if val == 'Flat':
             pass
         elif val == 'Slope':
@@ -126,6 +143,7 @@ class MyQtApp(Ui_MainWindow):
             pass
         elif val == 'Random':
             pass
+        self.label_2.setVisible(True) # REMOVE THIS LABEL
         print(val)
 
     def on_terrain_profile_change(self, val):
